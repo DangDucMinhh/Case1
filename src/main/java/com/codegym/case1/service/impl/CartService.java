@@ -20,7 +20,9 @@ public class CartService implements ICartService {
     }
 
     @Override
-    public Cart findById(Long id) {return (Cart) cartRepository.findById(id).get();}
+    public Cart findById(Long id) {
+        return cartRepository.findById(id).get();
+    }
 
     @Override
     public HashMap<String, List> getCartByUserId(Long id) {
@@ -117,7 +119,7 @@ public class CartService implements ICartService {
 
     @Override
     public void removeAllById(Long id) {
-        Cart cart = (Cart) cartRepository.findCartByUserId(id).get();
+        Cart cart = cartRepository.findCartByUserId(id).get();
         cart.getFood().clear();
         cartRepository.save(cart);
     }
