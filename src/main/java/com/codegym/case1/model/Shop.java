@@ -22,10 +22,8 @@ public class Shop {
     private String closing_time;
     private Double revenue;
     private boolean status;
-    @OneToMany
-    private Set<Coupon> coupons;
-    @ManyToMany
-    private Set<Orders> orders;
+
+   
     @OneToOne
     private User user;
 
